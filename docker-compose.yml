@@ -5,7 +5,7 @@ services:
 # Teedy Application
   teedy-server:
     container_name: teedy-server
-    image: sismics/docs:v1.11
+    image: sismics/docs:latest
     restart: unless-stopped
     ports:
       # Map internal port to host
@@ -25,7 +25,9 @@ services:
       DATABASE_PASSWORD: "teedy_db_password"
       DATABASE_POOL_SIZE: "10"
     volumes:
-      - ./docs/data:/data
+      - ${PWD}/docs/data:/data
+      - ${PWD}/docs.xml:/app/webapps/docs.xml
+      - ${PWD}/docs-web/target/docs-web-1.12-SNAPSHOT.war:/app/webapps/docs.war
     networks:
       - app-tier
     depends_on:

@@ -1,5 +1,5 @@
-FROM ubuntu:22.04
-LABEL maintainer="b.gamard@sismics.com"
+FROM ubuntu:22.04 AS builder
+LABEL maintainer="tjikaljedy"
 
 # Run Debian in non interactive mode
 ENV DEBIAN_FRONTEND noninteractive
