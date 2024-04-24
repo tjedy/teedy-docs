@@ -39,3 +39,9 @@ mvn -Pprod -DskipTests clean install
 ```
 
 You will get your deployable WAR in the `docs-web/target` directory.
+
+# Call event
+DocumentCreatedAsyncEvent documentCreatedAsyncEvent = new DocumentCreatedAsyncEvent();
+documentCreatedAsyncEvent.setUserId("admin");
+documentCreatedAsyncEvent.setDocumentId(document.getId());
+ThreadLocalContext.get().addAsyncEvent(documentCreatedAsyncEvent);

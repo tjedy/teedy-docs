@@ -123,6 +123,7 @@
     <module>docs-core</module>
     <module>docs-web-common</module>
     <module>docs-web</module>
+    <module>docs-besu</module>
   </modules>
 
   <dependencyManagement>
