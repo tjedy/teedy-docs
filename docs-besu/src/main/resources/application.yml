@@ -1,23 +1,6 @@
-application:
-    version: '@project.version@'
-server:
-    port: 8080
 spring:
     application:
-        name: '@project.build.finalName@'
-    datasource:
-        type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:postgresql://localhost:5432/melody_core
-        driverClassName: org.postgresql.Driver
-        username: postgres
-        password: postgres
-    jpa:
-        database-platform: org.hibernate.dialect.PostgreSQLDialect
-        database: POSTGRESQL
-        open-in-view: false
-        hibernate:
-            ddl-auto: update
-            show_sql: false
-    grpc:
-        server:
-            port: 9898
+        name: local-grpc-server
+grpc:
+    server:
+        port: 9890
