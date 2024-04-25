@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "io.melody.grpc.stubs";
+option java_multiple_files = true;
+
+message SecureDocRequest {
+  // a name to greet, default is "World"
+  optional string name = 1;
+}
+
+message SecureDocResponse {
+  string greeting = 1;
+}
+
+service SecureDocService {
+
+  rpc processFile(stream SecureDocRequest) returns (stream SecureDocResponse);
+
+}

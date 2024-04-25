@@ -10,9 +10,9 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>docs-besu</artifactId>
+    <artifactId>docs-grpc-server</artifactId>
     <packaging>jar</packaging>
-    <name>Docs Hyperledger Besu Client</name>
+    <name>Secure Doc gRpc Server</name>
 
     <properties>
         <spring-boot.version>3.2.4</spring-boot.version>
@@ -94,9 +94,9 @@
                 <artifactId>protobuf-maven-plugin</artifactId>
                 <version>${protobuf-maven-plugin.version}</version>
                 <configuration>
+                    <pluginId>grpc-java</pluginId>
                     <protocArtifact>com.google.protobuf:protoc:${protoc.version}:exe:${os.detected.classifier}
                     </protocArtifact>
-                    <pluginId>grpc-java</pluginId>
                     <pluginArtifact>io.grpc:protoc-gen-grpc-java:${io.grpc.version}:exe:${os.detected.classifier}
                     </pluginArtifact>
                 </configuration>
@@ -120,10 +120,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>11</source>
-                    <target>11</target>
-                </configuration>
             </plugin>
         </plugins>
 

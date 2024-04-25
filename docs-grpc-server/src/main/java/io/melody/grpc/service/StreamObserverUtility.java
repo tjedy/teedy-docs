@@ -1,4 +1,4 @@
-package io.melody.besu.service;
+package io.melody.grpc.service;
 
 import io.grpc.stub.StreamObserver;
 

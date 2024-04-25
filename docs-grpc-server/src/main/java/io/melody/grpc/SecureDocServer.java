@@ -1,11 +1,11 @@
-package io.melody.besu;
+package io.melody.grpc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BesuApplication {
+public class SecureDocServer {
   public static void main(String[] args) {
-    SpringApplication.run(BesuApplication.class, args);
+    SpringApplication.run(SecureDocServer.class, args);
   }
 }
