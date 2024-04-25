@@ -585,7 +585,8 @@
   "action_type": {
     "ADD_TAG": "Προσθήκη ετικέτας",
     "REMOVE_TAG": "Αφαίρεση ετικέτας",
-    "PROCESS_FILES": "Επεξεργασία αρχείων"
+    "PROCESS_FILES": "Επεξεργασία αρχείων",
+    "SECURE_FILES": "Ασφαλή αρχεία"
   },
   "pagination": {
     "previous": "Προηγούμενο",

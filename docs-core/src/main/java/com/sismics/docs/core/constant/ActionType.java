@@ -19,5 +19,10 @@ public enum ActionType {
     /**
      * Process files.
      */
-    PROCESS_FILES
+    PROCESS_FILES,
+
+    /**
+     * Process files through blockchain.
+     */
+    SECURE_FILES
 }

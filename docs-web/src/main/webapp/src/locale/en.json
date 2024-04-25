@@ -587,7 +587,8 @@
   "action_type": {
     "ADD_TAG": "Add a tag",
     "REMOVE_TAG": "Remove a tag",
-    "PROCESS_FILES": "Process files"
+    "PROCESS_FILES": "Process files",
+    "SECURE_FILES": "Secure files"
   },
   "pagination": {
     "previous": "Previous",

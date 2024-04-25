@@ -586,7 +586,8 @@
   "action_type": {
     "ADD_TAG": "Tag hinzufügen",
     "REMOVE_TAG": "Tag entfernen",
-    "PROCESS_FILES": "Dateien verarbeiten"
+    "PROCESS_FILES": "Dateien verarbeiten",
+    "SECURE_FILES": "Veilige bestanden"
   },
   "pagination": {
     "previous": "Vorherige",

@@ -557,7 +557,8 @@
   "action_type": {
     "ADD_TAG": "Añadir etiqueta",
     "REMOVE_TAG": "Eliminar etiqueta",
-    "PROCESS_FILES": "Procesar archivos"
+    "PROCESS_FILES": "Procesar archivos",
+    "SECURE_FILES": "Ficheros seguros"
   },
   "pagination": {
     "previous": "Anterior",

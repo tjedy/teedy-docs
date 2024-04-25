@@ -587,7 +587,8 @@
   "action_type": {
     "ADD_TAG": "Shto një etiketë",
     "REMOVE_TAG": "Hiq një etiketë",
-    "PROCESS_FILES": "Përpunoni skedarët"
+    "PROCESS_FILES": "Përpunoni skedarët",
+    "SECURE_FILES": "Turvalised failid"
   },
   "pagination": {
     "previous": "E mëparshme",

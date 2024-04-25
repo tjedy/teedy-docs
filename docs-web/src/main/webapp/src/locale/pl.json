@@ -585,7 +585,8 @@
   "action_type": {
     "ADD_TAG": "Dodaj etykietę",
     "REMOVE_TAG": "Usuń etykietę",
-    "PROCESS_FILES": "Przetwarzane pliki"
+    "PROCESS_FILES": "Przetwarzane pliki",
+    "SECURE_FILES": "Bezpieczne pliki"
   },
   "pagination": {
     "previous": "Poprzedni",

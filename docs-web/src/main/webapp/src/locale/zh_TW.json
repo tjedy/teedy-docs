@@ -492,6 +492,12 @@
     "first": "首先",
     "last": "最後"
   },
+  "action_type": {
+    "ADD_TAG": "添加标签",
+    "REMOVE_TAG": "移除标签",
+    "PROCESS_FILES": "处理文件",
+    "SECURE_FILES": "安全文件"
+  },
   "ok": "確認",
   "cancel": "取消",
   "share": "共享",
