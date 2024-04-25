@@ -1,6 +1,6 @@
 spring:
     application:
-        name: local-grpc-server
+        name: '@project.build.finalName@'
 grpc:
     server:
         port: 9890
