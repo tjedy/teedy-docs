@@ -59,3 +59,6 @@ update-alternatives --install "/usr/bin/java" "java" "/usr/local/openjdk-17/bin/
 update-alternatives --install "/usr/bin/javac" "javac" "/usr/local/openjdk-17/bin/javac" 0
 update-alternatives --set java /usr/local/openjdk-17/bin/java
 update-alternatives --set javac /usr/local/openjdk-17/bin/javac
+
+### AngularJs Guide
+1. route at docs/app.js (line 286)

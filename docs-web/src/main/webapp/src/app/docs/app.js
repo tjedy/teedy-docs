@@ -292,6 +292,15 @@ angular.module('docs',
         }
       }
     })
+    .state('document.add-certificate', {
+      url: '/add-certificate?files',
+      views: {
+        'document': {
+          templateUrl: 'partial/docs/document.edit.certificate.html',
+          controller: 'DocumentEditCertificate'
+        }
+      }
+    })
     .state('document.edit', {
       url: '/edit/:id?files',
       views: {
