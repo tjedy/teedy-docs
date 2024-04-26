@@ -123,7 +123,7 @@
     <module>docs-core</module>
     <module>docs-web-common</module>
     <module>docs-web</module>
-    <module>docs-grpc-server</module>
+    <module>docs-web3j</module>
   </modules>
 
   <dependencyManagement>

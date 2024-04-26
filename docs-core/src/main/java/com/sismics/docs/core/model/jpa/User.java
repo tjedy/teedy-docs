@@ -95,6 +95,9 @@ public class User implements Loggable {
     @Column(name = "USE_DISABLEDATE_D")
     private Date disableDate;
 
+    @Column(name = "USE_ADDRESS_HASH", length = 255)
+    private String addressHash;
+
     public String getId() {
         return id;
     }
@@ -211,6 +214,14 @@ public class User implements Loggable {
     public User setOnboarding(boolean onboarding) {
         this.onboarding = onboarding;
         return this;
+    }
+
+    public String getAddressHash() {
+        return addressHash;
+    }
+
+    public void setAddressHash(String addressHash) {
+        this.addressHash = addressHash;
     }
 
     @Override

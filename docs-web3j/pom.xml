@@ -10,9 +10,9 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>docs-grpc-server</artifactId>
+    <artifactId>docs-web3j</artifactId>
     <packaging>jar</packaging>
-    <name>Secure Doc gRpc Server</name>
+    <name>Docs Web3j</name>
 
     <properties>
         <spring-boot.version>3.2.4</spring-boot.version>

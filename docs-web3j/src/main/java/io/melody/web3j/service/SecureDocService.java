@@ -1,9 +1,9 @@
-package io.melody.grpc.service;
+package io.melody.web3j.service;
 
 import io.grpc.stub.StreamObserver;
-import io.melody.grpc.stubs.SecureDocRequest;
-import io.melody.grpc.stubs.SecureDocResponse;
-import io.melody.grpc.stubs.SecureDocServiceGrpc;
+import io.melody.web3j.stubs.SecureDocRequest;
+import io.melody.web3j.stubs.SecureDocResponse;
+import io.melody.web3j.stubs.SecureDocServiceGrpc;
 import net.devh.boot.grpc.server.service.GrpcService;
 
 import java.util.Optional;

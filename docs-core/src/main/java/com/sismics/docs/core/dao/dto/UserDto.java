@@ -48,6 +48,11 @@ public class UserDto {
      */
     private String totpKey;
 
+    /**
+     * Wallet Address
+     */
+    private String addressHash;
+
     public String getId() {
         return id;
     }
@@ -111,6 +116,14 @@ public class UserDto {
 
     public void setTotpKey(String totpKey) {
         this.totpKey = totpKey;
+    }
+
+    public String getAddressHash() {
+        return addressHash;
+    }
+
+    public void setAddressHash(String addressHash) {
+        this.addressHash = addressHash;
     }
 
     @Override

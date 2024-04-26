@@ -74,6 +74,9 @@
     "subject": "Subject",
     "identifier": "Identifier",
     "publisher": "Publisher",
+    "recipient": "Recipient",
+    "recipient_address": "Recipient Address",
+    "issuer": "Issuer",
     "format": "Format",
     "source": "Source",
     "type": "Type",
@@ -167,7 +170,10 @@
       "publisher_placeholder": "An entity responsible for making the resource available",
       "format_placeholder": "The file format, physical medium, or dimensions of the resource",
       "source_placeholder": "A related resource from which the described resource is derived",
-      "uploading_files": "Uploading files..."
+      "uploading_files": "Uploading files...",
+      "recipient_placeholder": "Search a user",
+      "recipient_address_placeholder": "Recipient Wallet address",
+      "issuer_placeholder": "Issuer name"
     },
     "default": {
       "upload_pending": "Pending...",

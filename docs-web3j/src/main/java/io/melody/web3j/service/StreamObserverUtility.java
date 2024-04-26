@@ -1,4 +1,4 @@
-package io.melody.grpc.service;
+package io.melody.web3j.service;
 
 import io.grpc.stub.StreamObserver;
 
