@@ -64,6 +64,11 @@
             <version>${io.grpc.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.web3j</groupId>
+            <artifactId>core</artifactId>
+            <version>5.0.0</version>
+        </dependency>
         <!-- we need this because protoc adds a @javax.annotation.Generated annotation to the sources -->
         <dependency>
             <groupId>javax.annotation</groupId>
@@ -75,7 +80,7 @@
     </dependencies>
 
     <build>
-        <finalName>doc-besu</finalName>
+        <finalName>docs-web3j</finalName>
         <extensions>
             <extension>
                 <groupId>kr.motd.maven</groupId>
