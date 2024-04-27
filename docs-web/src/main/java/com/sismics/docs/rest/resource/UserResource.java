@@ -1101,6 +1101,44 @@ public class UserResource extends BaseResource {
         return Response.ok().entity(response.build()).build();
     }
 
+    //Extensions
+    /**
+     * Enable Crypto Wallet password.
+     *
+     * @api {post} /user/enable_crypto Enable Crypto Wallet authentication
+     * @apiDescription This resource enables the Time-based One-time Password authentication.
+     * All following login will need a validation code generated from the given secret seed.
+     * @apiName PostUserEnableCrypto
+     * @apiGroup User
+     * @apiSuccess {String} secret Secret Crypto Wallet seed to initiate the algorithm
+     * @apiError (client) ForbiddenError Access denied or connected as guest
+     * @apiPermission user
+     * @apiVersion 1.5.0
+     *
+     * @return Response
+     */
+    @POST
+    @Path("enable_crypto")
+    public Response enableCrypto() {
+        if (!authenticate() || principal.isGuest()) {
+            throw new ForbiddenClientException();
+        }
+
+        // Create a new Crypto key
+        GoogleAuthenticator gAuth = new GoogleAuthenticator();
+        final GoogleAuthenticatorKey key = gAuth.createCredentials();
+
+        // Save it
+        UserDao userDao = new UserDao();
+        User user = userDao.getActiveByUsername(principal.getName());
+        user.setTotpKey(key.getKey());
+        userDao.update(user, principal.getId());
+
+        JsonObjectBuilder response = Json.createObjectBuilder()
+            .add("secret", key.getKey());
+        return Response.ok().entity(response.build()).build();
+    }
+
     /**
      * Returns the authentication token value.
      *

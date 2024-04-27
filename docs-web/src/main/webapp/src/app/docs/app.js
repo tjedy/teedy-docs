@@ -4,429 +4,439 @@
  * Teedy application.
  */
 angular.module('docs',
-    // Dependencies
-    ['ui.router', 'ui.bootstrap', 'dialog', 'ngProgress', 'monospaced.qrcode', 'yaru22.angular-timeago', 'ui.validate',
-      'ui.sortable', 'restangular', 'ngSanitize', 'ngTouch', 'colorpicker.module', 'ngFileUpload', 'pascalprecht.translate',
-      'tmh.dynamicLocale', 'ngOnboarding']
-  )
+  // Dependencies
+  ['ui.router', 'ui.bootstrap', 'dialog', 'ngProgress', 'monospaced.qrcode', 'yaru22.angular-timeago', 'ui.validate',
+    'ui.sortable', 'restangular', 'ngSanitize', 'ngTouch', 'colorpicker.module', 'ngFileUpload', 'pascalprecht.translate',
+    'tmh.dynamicLocale', 'ngOnboarding']
+)
 
 /**
  * Configuring modules.
  */
-.config(function($locationProvider, $urlRouterProvider, $stateProvider, $httpProvider, $qProvider,
-                 RestangularProvider, $translateProvider, timeAgoSettings, tmhDynamicLocaleProvider) {
+  .config(function($locationProvider, $urlRouterProvider, $stateProvider, $httpProvider, $qProvider,
+RestangularProvider, $translateProvider, timeAgoSettings, tmhDynamicLocaleProvider) {
   $locationProvider.hashPrefix('');
 
   // Configuring UI Router
   $stateProvider
     .state('main', {
-      url: '',
-      views: {
-        'page': {
-          templateUrl: 'partial/docs/main.html',
-          controller: 'Main'
-        }
+    url: '',
+    views: {
+      'page': {
+        templateUrl: 'partial/docs/main.html',
+        controller: 'Main'
       }
-    })
+    }
+  })
     .state('passwordreset', {
-      url: '/passwordreset/:key',
-      views: {
-        'page': {
-          templateUrl: 'partial/docs/passwordreset.html',
-          controller: 'PasswordReset'
-        }
+    url: '/passwordreset/:key',
+    views: {
+      'page': {
+        templateUrl: 'partial/docs/passwordreset.html',
+        controller: 'PasswordReset'
       }
-    })
+    }
+  })
     .state('tag', {
-      url: '/tag',
-      abstract: true,
-      views: {
-        'page': {
-          templateUrl: 'partial/docs/tag.html',
-          controller: 'Tag'
-        }
+    url: '/tag',
+    abstract: true,
+    views: {
+      'page': {
+        templateUrl: 'partial/docs/tag.html',
+        controller: 'Tag'
       }
-    })
+    }
+  })
     .state('tag.default', {
-      url: '',
-      views: {
-        'tag': {
-          templateUrl: 'partial/docs/tag.default.html'
-        }
+    url: '',
+    views: {
+      'tag': {
+        templateUrl: 'partial/docs/tag.default.html'
       }
-    })
+    }
+  })
     .state('tag.edit', {
-      url: '/:id',
-      views: {
-        'tag': {
-          templateUrl: 'partial/docs/tag.edit.html',
-          controller: 'TagEdit'
-        }
+    url: '/:id',
+    views: {
+      'tag': {
+        templateUrl: 'partial/docs/tag.edit.html',
+        controller: 'TagEdit'
       }
-    })
+    }
+  })
     .state('settings', {
-      url: '/settings',
-      abstract: true,
-      views: {
-        'page': {
-          templateUrl: 'partial/docs/settings.html',
-          controller: 'Settings'
-        }
+    url: '/settings',
+    abstract: true,
+    views: {
+      'page': {
+        templateUrl: 'partial/docs/settings.html',
+        controller: 'Settings'
       }
-    })
+    }
+  })
     .state('settings.default', {
-      url: '',
-      views: {
-        'settings': {
-          templateUrl: 'partial/docs/settings.default.html',
-          controller: 'SettingsDefault'
-        }
+    url: '',
+    views: {
+      'settings': {
+        templateUrl: 'partial/docs/settings.default.html',
+        controller: 'SettingsDefault'
       }
-    })
+    }
+  })
     .state('settings.account', {
-      url: '/account',
-      views: {
-        'settings': {
-          templateUrl: 'partial/docs/settings.account.html',
-          controller: 'SettingsAccount'
-        }
+    url: '/account',
+    views: {
+      'settings': {
+        templateUrl: 'partial/docs/settings.account.html',
+        controller: 'SettingsAccount'
       }
-    })
+    }
+  })
     .state('settings.security', {
-      url: '/security',
-      views: {
-        'settings': {
-          templateUrl: 'partial/docs/settings.security.html',
-          controller: 'SettingsSecurity'
-        }
+    url: '/security',
+    views: {
+      'settings': {
+        templateUrl: 'partial/docs/settings.security.html',
+        controller: 'SettingsSecurity'
       }
-    })
+    }
+  })
     .state('settings.session', {
-      url: '/session',
-      views: {
-        'settings': {
-          templateUrl: 'partial/docs/settings.session.html',
-          controller: 'SettingsSession'
-        }
+    url: '/session',
+    views: {
+      'settings': {
+        templateUrl: 'partial/docs/settings.session.html',
+        controller: 'SettingsSession'
       }
-    })
+    }
+  })
     .state('settings.fileimporter', {
-      url: '/fileimporter',
-      views: {
-        'settings': {
-          templateUrl: 'partial/docs/settings.fileimporter.html'
-        }
+    url: '/fileimporter',
+    views: {
+      'settings': {
+        templateUrl: 'partial/docs/settings.fileimporter.html'
       }
-    })
+    }
+  })
     .state('settings.monitoring', {
-      url: '/monitoring',
-      views: {
-        'settings': {
-          templateUrl: 'partial/docs/settings.monitoring.html',
-          controller: 'SettingsMonitoring'
-        }
+    url: '/monitoring',
+    views: {
+      'settings': {
+        templateUrl: 'partial/docs/settings.monitoring.html',
+        controller: 'SettingsMonitoring'
       }
-    })
+    }
+  })
     .state('settings.config', {
-      url: '/config',
-      views: {
-        'settings': {
-          templateUrl: 'partial/docs/settings.config.html',
-          controller: 'SettingsConfig'
-        }
+    url: '/config',
+    views: {
+      'settings': {
+        templateUrl: 'partial/docs/settings.config.html',
+        controller: 'SettingsConfig'
       }
-    })
+    }
+  })
     .state('settings.inbox', {
-      url: '/inbox',
-      views: {
-        'settings': {
-          templateUrl: 'partial/docs/settings.inbox.html',
-          controller: 'SettingsInbox'
-        }
+    url: '/inbox',
+    views: {
+      'settings': {
+        templateUrl: 'partial/docs/settings.inbox.html',
+        controller: 'SettingsInbox'
       }
-    })
+    }
+  })
     .state('settings.metadata', {
-      url: '/metadata',
-      views: {
-        'settings': {
-          templateUrl: 'partial/docs/settings.metadata.html',
-          controller: 'SettingsMetadata'
-        }
+    url: '/metadata',
+    views: {
+      'settings': {
+        templateUrl: 'partial/docs/settings.metadata.html',
+        controller: 'SettingsMetadata'
       }
-    })
+    }
+  })
     .state('settings.user', {
-      url: '/user',
-      views: {
-        'settings': {
-          templateUrl: 'partial/docs/settings.user.html',
-          controller: 'SettingsUser'
-        }
+    url: '/user',
+    views: {
+      'settings': {
+        templateUrl: 'partial/docs/settings.user.html',
+        controller: 'SettingsUser'
       }
-    })
+    }
+  })
     .state('settings.user.edit', {
-      url: '/edit/:username',
-      views: {
-        'user': {
-          templateUrl: 'partial/docs/settings.user.edit.html',
-          controller: 'SettingsUserEdit'
-        }
+    url: '/edit/:username',
+    views: {
+      'user': {
+        templateUrl: 'partial/docs/settings.user.edit.html',
+        controller: 'SettingsUserEdit'
       }
-    })
+    }
+  })
     .state('settings.user.add', {
-      url: '/add',
-      views: {
-        'user': {
-          templateUrl: 'partial/docs/settings.user.edit.html',
-          controller: 'SettingsUserEdit'
-        }
+    url: '/add',
+    views: {
+      'user': {
+        templateUrl: 'partial/docs/settings.user.edit.html',
+        controller: 'SettingsUserEdit'
       }
-    })
+    }
+  })
     .state('settings.workflow', {
-      url: '/workflow',
-      views: {
-        'settings': {
-          templateUrl: 'partial/docs/settings.workflow.html',
-          controller: 'SettingsWorkflow'
-        }
+    url: '/workflow',
+    views: {
+      'settings': {
+        templateUrl: 'partial/docs/settings.workflow.html',
+        controller: 'SettingsWorkflow'
       }
-    })
+    }
+  })
     .state('settings.workflow.edit', {
-      url: '/edit/:id',
-      views: {
-        'workflow': {
-          templateUrl: 'partial/docs/settings.workflow.edit.html',
-          controller: 'SettingsWorkflowEdit'
-        }
+    url: '/edit/:id',
+    views: {
+      'workflow': {
+        templateUrl: 'partial/docs/settings.workflow.edit.html',
+        controller: 'SettingsWorkflowEdit'
       }
-    })
+    }
+  })
     .state('settings.workflow.add', {
-      url: '/add',
-      views: {
-        'workflow': {
-          templateUrl: 'partial/docs/settings.workflow.edit.html',
-          controller: 'SettingsWorkflowEdit'
-        }
+    url: '/add',
+    views: {
+      'workflow': {
+        templateUrl: 'partial/docs/settings.workflow.edit.html',
+        controller: 'SettingsWorkflowEdit'
       }
-    })
+    }
+  })
     .state('settings.group', {
-      url: '/group',
-      views: {
-        'settings': {
-          templateUrl: 'partial/docs/settings.group.html',
-          controller: 'SettingsGroup'
-        }
+    url: '/group',
+    views: {
+      'settings': {
+        templateUrl: 'partial/docs/settings.group.html',
+        controller: 'SettingsGroup'
       }
-    })
+    }
+  })
     .state('settings.group.edit', {
-      url: '/edit/:name',
-      views: {
-        'group': {
-          templateUrl: 'partial/docs/settings.group.edit.html',
-          controller: 'SettingsGroupEdit'
-        }
+    url: '/edit/:name',
+    views: {
+      'group': {
+        templateUrl: 'partial/docs/settings.group.edit.html',
+        controller: 'SettingsGroupEdit'
       }
-    })
+    }
+  })
     .state('settings.group.add', {
-      url: '/add',
-      views: {
-        'group': {
-          templateUrl: 'partial/docs/settings.group.edit.html',
-          controller: 'SettingsGroupEdit'
-        }
+    url: '/add',
+    views: {
+      'group': {
+        templateUrl: 'partial/docs/settings.group.edit.html',
+        controller: 'SettingsGroupEdit'
       }
-    })
+    }
+  })
     .state('settings.vocabulary', {
-      url: '/vocabulary',
-      views: {
-        'settings': {
-          templateUrl: 'partial/docs/settings.vocabulary.html',
-          controller: 'SettingsVocabulary'
-        }
+    url: '/vocabulary',
+    views: {
+      'settings': {
+        templateUrl: 'partial/docs/settings.vocabulary.html',
+        controller: 'SettingsVocabulary'
       }
-    })
+    }
+  })
     .state('settings.ldap', {
-      url: '/ldap',
-      views: {
-        'settings': {
-          templateUrl: 'partial/docs/settings.ldap.html',
-          controller: 'SettingsLdap'
-        }
+    url: '/ldap',
+    views: {
+      'settings': {
+        templateUrl: 'partial/docs/settings.ldap.html',
+        controller: 'SettingsLdap'
       }
-    })
+    }
+  })
     .state('document', {
-      url: '/document',
-      abstract: true,
-      views: {
-        'page': {
-          templateUrl: 'partial/docs/document.html',
-          controller: 'Document'
-        }
+    url: '/document',
+    abstract: true,
+    views: {
+      'page': {
+        templateUrl: 'partial/docs/document.html',
+        controller: 'Document'
       }
-    })
+    }
+  })
     .state('document.default', {
-      url: '',
-      views: {
-        'document': {
-          templateUrl: 'partial/docs/document.default.html',
-          controller: 'DocumentDefault'
-        }
+    url: '',
+    views: {
+      'document': {
+        templateUrl: 'partial/docs/document.default.html',
+        controller: 'DocumentDefault'
       }
-    })
+    }
+  })
     .state('document.default.search', {
-      url: '/search/:search'
-    })
+    url: '/search/:search'
+  })
     .state('document.default.file', {
-      url: '/file/:fileId',
-      views: {
-        'file': {
-          controller: 'FileView'
-        }
+    url: '/file/:fileId',
+    views: {
+      'file': {
+        controller: 'FileView'
       }
-    })
+    }
+  })
     .state('document.add', {
-      url: '/add?files',
-      views: {
-        'document': {
-          templateUrl: 'partial/docs/document.edit.html',
-          controller: 'DocumentEdit'
-        }
+    url: '/add?files',
+    views: {
+      'document': {
+        templateUrl: 'partial/docs/document.edit.html',
+        controller: 'DocumentEdit'
       }
-    })
-    .state('document.add-certificate', {
-      url: '/add-certificate?files',
-      views: {
-        'document': {
-          templateUrl: 'partial/docs/document.edit.certificate.html',
-          controller: 'DocumentEditCertificate'
-        }
-      }
-    })
+    }
+  })
     .state('document.edit', {
-      url: '/edit/:id?files',
-      views: {
-        'document': {
-          templateUrl: 'partial/docs/document.edit.html',
-          controller: 'DocumentEdit'
-        }
+    url: '/edit/:id?files',
+    views: {
+      'document': {
+        templateUrl: 'partial/docs/document.edit.html',
+        controller: 'DocumentEdit'
       }
-    })
+    }
+  })
     .state('document.view', {
-      url: '/view/:id',
-      redirectTo: 'document.view.content',
-      views: {
-        'document': {
-          templateUrl: 'partial/docs/document.view.html',
-          controller: 'DocumentView'
-        }
+    url: '/view/:id',
+    redirectTo: 'document.view.content',
+    views: {
+      'document': {
+        templateUrl: 'partial/docs/document.view.html',
+        controller: 'DocumentView'
       }
-    })
+    }
+  })
     .state('document.view.content', {
-      url: '/content',
-      views: {
-        'tab': {
-          templateUrl: 'partial/docs/document.view.content.html',
-          controller: 'DocumentViewContent'
-        }
+    url: '/content',
+    views: {
+      'tab': {
+        templateUrl: 'partial/docs/document.view.content.html',
+        controller: 'DocumentViewContent'
       }
-    })
+    }
+  })
     .state('document.view.workflow', {
-      url: '/workflow',
-      views: {
-        'tab': {
-          templateUrl: 'partial/docs/document.view.workflow.html',
-          controller: 'DocumentViewWorkflow'
-        }
+    url: '/workflow',
+    views: {
+      'tab': {
+        templateUrl: 'partial/docs/document.view.workflow.html',
+        controller: 'DocumentViewWorkflow'
       }
-    })
+    }
+  })
     .state('document.view.content.file', {
-      url: '/file/:fileId',
-      views: {
-        'file': {
-          controller: 'FileView'
-        }
+    url: '/file/:fileId',
+    views: {
+      'file': {
+        controller: 'FileView'
       }
-    })
+    }
+  })
     .state('document.view.permissions', {
-      url: '/permissions',
-      views: {
-        'tab': {
-          templateUrl: 'partial/docs/document.view.permissions.html',
-          controller: 'DocumentViewPermissions'
-        }
+    url: '/permissions',
+    views: {
+      'tab': {
+        templateUrl: 'partial/docs/document.view.permissions.html',
+        controller: 'DocumentViewPermissions'
       }
-    })
+    }
+  })
     .state('document.view.activity', {
-      url: '/activity',
-      views: {
-        'tab': {
-          templateUrl: 'partial/docs/document.view.activity.html',
-          controller: 'DocumentViewActivity'
-        }
+    url: '/activity',
+    views: {
+      'tab': {
+        templateUrl: 'partial/docs/document.view.activity.html',
+        controller: 'DocumentViewActivity'
       }
-    })
+    }
+  })
     .state('login', {
-      url: '/login?redirectState&redirectParams',
-      views: {
-        'page': {
-          templateUrl: 'partial/docs/login.html',
-          controller: 'Login'
-        }
+    url: '/login?redirectState&redirectParams',
+    views: {
+      'page': {
+        templateUrl: 'partial/docs/login.html',
+        controller: 'Login'
       }
-    })
+    }
+  })
     .state('user', {
-      url: '/user',
-      abstract: true,
-      views: {
-        'page': {
-          templateUrl: 'partial/docs/usergroup.html',
-          controller: 'UserGroup'
-        }
+    url: '/user',
+    abstract: true,
+    views: {
+      'page': {
+        templateUrl: 'partial/docs/usergroup.html',
+        controller: 'UserGroup'
       }
-    })
+    }
+  })
     .state('user.default', {
-      url: '',
-      views: {
-        'sub': {
-          templateUrl: 'partial/docs/usergroup.default.html'
-        }
+    url: '',
+    views: {
+      'sub': {
+        templateUrl: 'partial/docs/usergroup.default.html'
       }
-    })
+    }
+  })
     .state('user.profile', {
-      url: '/:username',
-      views: {
-        'sub': {
-          templateUrl: 'partial/docs/user.profile.html',
-          controller: 'UserProfile'
-        }
+    url: '/:username',
+    views: {
+      'sub': {
+        templateUrl: 'partial/docs/user.profile.html',
+        controller: 'UserProfile'
       }
-    })
+    }
+  })
     .state('group', {
-      url: '/group',
-      abstract: true,
-      views: {
-        'page': {
-          templateUrl: 'partial/docs/usergroup.html',
-          controller: 'UserGroup'
-        }
+    url: '/group',
+    abstract: true,
+    views: {
+      'page': {
+        templateUrl: 'partial/docs/usergroup.html',
+        controller: 'UserGroup'
       }
-    })
+    }
+  })
     .state('group.default', {
-      url: '',
-      views: {
-        'sub': {
-          templateUrl: 'partial/docs/usergroup.default.html'
-        }
+    url: '',
+    views: {
+      'sub': {
+        templateUrl: 'partial/docs/usergroup.default.html'
       }
-    })
+    }
+  })
     .state('group.profile', {
-      url: '/:name',
-      views: {
-        'sub': {
-          templateUrl: 'partial/docs/group.profile.html',
-          controller: 'GroupProfile'
-        }
+    url: '/:name',
+    views: {
+      'sub': {
+        templateUrl: 'partial/docs/group.profile.html',
+        controller: 'GroupProfile'
       }
-    });
+    }
+  })
+  //Extensions
+    .state('document.add-certificate', {
+    url: '/add-certificate?files',
+    views: {
+      'document': {
+        templateUrl: 'partial/docs/exts/document.edit.certificate.html',
+        controller: 'DocumentEditCertificate'
+      }
+    }
+  })
+    .state('settings.crypto', {
+    url: '/crypto',
+    views: {
+      'settings': {
+        templateUrl: 'partial/docs/exts/settings.crypto.html',
+        controller: 'SettingsCrypto'
+      }
+    }
+  });
 
   // Configuring Restangular
   RestangularProvider.setBaseUrl('../api');
@@ -435,21 +445,21 @@ angular.module('docs',
   $translateProvider
     .useSanitizeValueStrategy('escapeParameters')
     .useStaticFilesLoader({
-      prefix: 'locale/',
-      suffix: '.json?@build.date@'
-    })
+    prefix: 'locale/',
+    suffix: '.json?@build.date@'
+  })
     .registerAvailableLanguageKeys(['en', 'es', 'pt', 'fr', 'de', 'el', 'ru', 'it', 'pl', 'zh_CN', 'zh_TW', 'sq_AL'], {
-      'en_*': 'en',
-      'es_*': 'es',
-      'pt_*': 'pt',
-      'fr_*': 'fr',
-      'de_*': 'de',
-	    'el_*': 'el',
-      'ru_*': 'ru',
-      'it_*': 'it',
-	    'pl_*': 'pl',
-      '*': 'en'
-    })
+    'en_*': 'en',
+    'es_*': 'es',
+    'pt_*': 'pt',
+    'fr_*': 'fr',
+    'de_*': 'de',
+    'el_*': 'el',
+    'ru_*': 'ru',
+    'it_*': 'it',
+    'pl_*': 'pl',
+    '*': 'en'
+  })
     .fallbackLanguage('en');
 
   if (!_.isUndefined(localStorage.overrideLang)) {
@@ -479,10 +489,10 @@ angular.module('docs',
     var param = function(obj) {
       var query = '';
       var name, value, fullSubName, subName, subValue, innerObj, i;
-      
+
       for(name in obj) {
         value = obj[name];
-        
+
         if(value instanceof Array) {
           for(i=0; i<value.length; ++i) {
             subValue = value[i];
@@ -504,10 +514,10 @@ angular.module('docs',
           query += encodeURIComponent(name) + '=' + encodeURIComponent(value) + '&';
         }
       }
-      
+
       return query.length ? query.substr(0, query.length - 1) : query;
     };
-    
+
     return angular.isObject(data) && String(data) !== '[object File]' ? param(data) : data;
   }];
 
@@ -518,7 +528,7 @@ angular.module('docs',
 /**
  * Application initialization.
  */
-.run(function($rootScope, $state, $stateParams, Restangular) {
+  .run(function($rootScope, $state, $stateParams, Restangular) {
   $rootScope.$state = $state;
   $rootScope.$stateParams = $stateParams;
 
@@ -563,7 +573,7 @@ angular.module('docs',
 /**
  * Initialize ngProgress.
  */
-.run (function ($rootScope, ngProgressFactory, $http) {
+  .run (function ($rootScope, ngProgressFactory, $http) {
   $rootScope.ngProgress = ngProgressFactory.createInstance();
 
   // Watch for the number of XHR running
@@ -580,7 +590,7 @@ angular.module('docs',
 /**
  * Initialize ngOnboarding.
  */
-.run (function ($rootScope) {
+  .run (function ($rootScope) {
   $rootScope.onboardingEnabled = false;
 });
 

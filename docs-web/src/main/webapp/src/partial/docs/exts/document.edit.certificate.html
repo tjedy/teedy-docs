@@ -18,7 +18,7 @@
     </div>
 
     <fieldset>
-      <legend>{{ 'document.edit.primary_certificate_metadata' | translate }}</legend>
+      <legend>{{ 'exts.document.edit.primary_certificate_metadata' | translate }}</legend>
       <div class="form-group" ng-class="{ 'has-error': !documentForm.title.$valid && documentForm.$dirty }">
         <label class="col-sm-2 control-label" for="inputTitle">{{ 'document.title' | translate }}</label>
         <div class="col-sm-10">
@@ -29,7 +29,7 @@
         </div>
       </div>
       <div class="form-group" ng-class="{ 'has-error': !documentForm.source.$valid }">
-        <label class="col-sm-2 control-label" for="inputSource">{{ 'document.recipient' | translate }}</label>
+        <label class="col-sm-2 control-label" for="inputSource">{{ 'exts.document.recipient' | translate }}</label>
         <div class="col-sm-10">
           <input ng-maxlength="50" class="form-control" type="text" id="inputSource"
                  ng-attr-placeholder="{{ 'document.edit.recipient_placeholder' | translate }}" name="source" ng-model="document.source" ng-disabled="fileIsUploading"
@@ -42,7 +42,7 @@
         </div>
       </div>
       <div class="form-group" ng-class="{ 'has-error': !documentForm.identifier.$valid }">
-        <label class="col-sm-2 control-label" for="inputIdentifier">{{ 'document.recipient_address' | translate }}</label>
+        <label class="col-sm-2 control-label" for="inputIdentifier">{{ 'exts.document.recipient_address' | translate }}</label>
         <div class="col-sm-10">
           <input ng-maxlength="500" class="form-control" type="text" id="inputIdentifier"
                  ng-attr-placeholder="{{ 'document.edit.recipient_address_placeholder' | translate }}" name="identifier" ng-model="document.identifier" ng-disabled="true" />

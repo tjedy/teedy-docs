@@ -67,7 +67,7 @@ module.exports = function(grunt) {
     ngtemplates: {
       docs: {
         cwd: 'src',
-        src: 'partial/docs/*.html',
+        src: ['partial/docs/*.html','partial/docs/exts/*.html'],
         dest: 'dist/docs.min.js',
         options: {
           append: true,

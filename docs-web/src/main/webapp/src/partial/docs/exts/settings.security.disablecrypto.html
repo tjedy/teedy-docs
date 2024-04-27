@@ -1,0 +1,18 @@
+<div class="modal-header">
+  <h3>{{ 'exts.settings.crypto.disable_crypto' | translate }}</h3>
+</div>
+<div class="modal-body">
+  <p class="text-danger">
+    {{ 'exts.settings.crypto.disable_crypto.message' | translate }}
+  </p>
+  <p>
+    <label for="password">{{ 'exts.settings.crypto.disable_crypto.confirm_password' | translate }}</label>
+    <input class="form-control" type="password" id="password" ng-model="password" />
+  </p>
+</div>
+<div class="modal-footer">
+  <button ng-click="close(password)" class="btn btn-warning">
+    {{ 'exts.settings.crypto.disable_crypto.submit' | translate }}
+  </button>
+  <button ng-click="close(null)" class="btn btn-default">{{ 'cancel' | translate }}</button>
+</div>
